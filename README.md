@@ -1,0 +1,11 @@
+# Sudoku-Solver 
+
+The provided Python code is a comprehensive implementation of a Sudoku solver using the backtracking algorithm. Sudoku is a popular logic-based puzzle where the objective is to fill a 9x9 grid with digits from 1 to 9, such that each row, each column, and each of the nine 3x3 subgrids contain all of the digits from 1 to 9 without repetition.
+
+The code begins with helper functions that facilitate various aspects of the solver. print_board assists in visually representing the Sudoku grid, displaying periods for empty cells. is_valid determines if it's permissible to place a number at a specific position on the board, ensuring that the placement adheres to Sudoku rules—no repetition of numbers in rows, columns, or 3x3 subgrids. find_empty locates an empty cell on the board, facilitating the backtracking process.
+
+The core of the solver lies in the solve_sudoku function, employing a recursive backtracking approach. It starts by finding an empty cell using find_empty. If no empty cells are found, the Sudoku puzzle is considered solved. Otherwise, it iterates through numbers from 1 to 9 and attempts to place each number in the empty cell. It then recursively calls itself to solve the remaining puzzle. If a placement leads to a valid solution, the puzzle is considered solved, and the function returns True. If no valid solution is found, the function backtracks, undoing the last placement and exploring the next number.
+
+An example Sudoku puzzle is provided within the code as a 9x9 grid, with some cells pre-filled with numbers and others left empty. The solver is invoked on this puzzle, and upon finding a solution, it prints both the original and solved Sudoku grids using the print_board function. If no solution exists, it notifies the user accordingly.
+
+This implementation showcases the elegance and efficiency of the backtracking algorithm in solving constraint satisfaction problems like Sudoku. Backtracking allows the solver to explore possible solutions incrementally, discarding those that violate constraints and backtracking when necessary to explore alternative paths. Overall, this code provides a clear and concise solution to the Sudoku puzzle, demonstrating the power of backtracking in solving combinatorial problems.
